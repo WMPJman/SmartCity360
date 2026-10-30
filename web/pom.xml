@@ -33,6 +33,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <packagingExcludes>**/.gitkeep</packagingExcludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
