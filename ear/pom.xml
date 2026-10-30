@@ -38,21 +38,23 @@
                     <generateApplicationXml>false</generateApplicationXml>
                     <earSourceDirectory>${project.basedir}/src/main/application</earSourceDirectory>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
-                    <fileNameMapping>standard</fileNameMapping>
                     <modules>
                         <jarModule>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>smartcity360-core</artifactId>
                             <bundleDir>lib</bundleDir>
+                            <bundleFileName>smartcity360-core-${project.version}.jar</bundleFileName>
                             <includeInApplicationXml>false</includeInApplicationXml>
                         </jarModule>
                         <ejbModule>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>smartcity360-ejb</artifactId>
+                            <bundleFileName>smartcity360-ejb-${project.version}.jar</bundleFileName>
                         </ejbModule>
                         <webModule>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>smartcity360-web</artifactId>
+                            <bundleFileName>smartcity360-web-${project.version}.war</bundleFileName>
                             <contextRoot>/smartcity360</contextRoot>
                         </webModule>
                     </modules>

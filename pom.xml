@@ -113,6 +113,7 @@
                     <version>${maven.surefire.plugin.version}</version>
                     <configuration>
                         <useModulePath>false</useModulePath>
+                        <useManifestOnlyJar>false</useManifestOnlyJar>
                     </configuration>
                 </plugin>
             </plugins>
