@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="https://jakarta.ee/xml/ns/jakartaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/application_10.xsd"
+             version="10">
+    <application-name>SmartCity360</application-name>
+    <description>SmartCity360 Jakarta EE enterprise application</description>
+    <module>
+        <ejb>smartcity360-ejb-1.0-SNAPSHOT.jar</ejb>
+    </module>
+    <module>
+        <web>
+            <web-uri>smartcity360-web-1.0-SNAPSHOT.war</web-uri>
+            <context-root>/smartcity360</context-root>
+        </web>
+    </module>
+    <library-directory>lib</library-directory>
+</application>
