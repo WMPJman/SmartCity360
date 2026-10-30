@@ -2,6 +2,7 @@ package com.wmpj.smartcity360.web.resource;
 
 import com.wmpj.smartcity360.core.service.HealthService;
 import com.wmpj.smartcity360.web.config.RestApplication;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -25,6 +26,7 @@ class HealthResourceTest {
         assertEquals("/api", applicationPath.value());
         assertNotNull(resourcePath);
         assertEquals("/health", resourcePath.value());
+        assertNotNull(HealthResource.class.getAnnotation(RequestScoped.class));
         assertNotNull(healthMethod.getAnnotation(GET.class));
     }
 

@@ -2,6 +2,7 @@ package com.wmpj.smartcity360.web.resource;
 
 import com.wmpj.smartcity360.core.service.HealthService;
 import jakarta.ejb.EJB;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -11,6 +12,7 @@ import java.util.Map;
 
 @Path("/health")
 @Produces(MediaType.APPLICATION_JSON)
+@RequestScoped
 public class HealthResource {
 
     @EJB
