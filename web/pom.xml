@@ -15,16 +15,19 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>smartcity360-core</artifactId>
+            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <version>5.11.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -32,9 +35,33 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.16.0</version>
                 <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.5.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                     <packagingExcludes>**/.gitkeep</packagingExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <useModulePath>false</useModulePath>
+                    <useManifestOnlyJar>false</useManifestOnlyJar>
                 </configuration>
             </plugin>
         </plugins>
