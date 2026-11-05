@@ -1,0 +1,8 @@
+package com.wmpj.smartcity360.core.entity;
+import jakarta.persistence.*; import org.junit.jupiter.api.Test; import java.lang.reflect.Field; import java.time.OffsetDateTime; import static org.junit.jupiter.api.Assertions.*;
+class NotificationEntityMappingTest { @Test void mapsVerifiedNotificationSchema()throws Exception{
+ assertEquals("notifications",Notification.class.getAnnotation(Table.class).name()); assertEquals(GenerationType.IDENTITY,Notification.class.getDeclaredField("id").getAnnotation(GeneratedValue.class).strategy()); rel("user",User.class,"user_id",false); rel("relatedComplaint",Complaint.class,"related_complaint_id",true);
+ Column title=Notification.class.getDeclaredField("title").getAnnotation(Column.class); assertEquals(150,title.length()); Column type=Notification.class.getDeclaredField("notificationType").getAnnotation(Column.class); assertEquals(40,type.length()); assertEquals(String.class,Notification.class.getDeclaredField("notificationType").getType());
+ Notification n=new Notification(); assertFalse(n.isRead()); assertEquals(OffsetDateTime.class,Notification.class.getDeclaredField("createdAt").getType()); assertEquals(OffsetDateTime.class,Notification.class.getDeclaredField("readAt").getType()); }
+ private static void rel(String n,Class<?> t,String c,boolean o)throws Exception{Field f=Notification.class.getDeclaredField(n);assertEquals(t,f.getType());ManyToOne m=f.getAnnotation(ManyToOne.class);assertEquals(FetchType.LAZY,m.fetch());assertEquals(o,m.optional());assertArrayEquals(new CascadeType[0],m.cascade());assertEquals(c,f.getAnnotation(JoinColumn.class).name());}
+}

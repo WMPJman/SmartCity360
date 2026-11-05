@@ -45,6 +45,7 @@
                 <configuration>
                     <version>10</version>
                     <generateApplicationXml>false</generateApplicationXml>
+                    <skipClassPathModification>true</skipClassPathModification>
                     <earSourceDirectory>${project.basedir}/src/main/application</earSourceDirectory>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>

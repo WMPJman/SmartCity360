@@ -7,4 +7,24 @@
         <web-uri>smartcity360-web-1.0-SNAPSHOT.war</web-uri>
         <context-root>/smartcity360</context-root>
     </web>
+    <security-role-mapping>
+        <role-name>ADMIN</role-name>
+        <group-name>ADMIN</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>CITY_MANAGER</role-name>
+        <group-name>CITY_MANAGER</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>SUPERVISOR</role-name>
+        <group-name>SUPERVISOR</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>LOCAL_STAFF</role-name>
+        <group-name>LOCAL_STAFF</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>RESIDENT</role-name>
+        <group-name>RESIDENT</group-name>
+    </security-role-mapping>
 </glassfish-application>

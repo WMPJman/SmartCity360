@@ -14,5 +14,20 @@
             <context-root>/smartcity360</context-root>
         </web>
     </module>
+    <security-role>
+        <role-name>ADMIN</role-name>
+    </security-role>
+    <security-role>
+        <role-name>CITY_MANAGER</role-name>
+    </security-role>
+    <security-role>
+        <role-name>SUPERVISOR</role-name>
+    </security-role>
+    <security-role>
+        <role-name>LOCAL_STAFF</role-name>
+    </security-role>
+    <security-role>
+        <role-name>RESIDENT</role-name>
+    </security-role>
     <library-directory>lib</library-directory>
 </application>
